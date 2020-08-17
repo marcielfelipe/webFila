@@ -1,0 +1,19 @@
+.painel-container{
+    margin-top: 10vh;
+}
+.top{
+    color: #fff;
+    display:flex;
+    justify-content:space-evenly;
+
+}
+.top section{
+    background-color: #002740;
+    border-radius: 9px;
+}
+.top section {
+    width:450px;
+    background-color: #002740;
+    border-radius: 9px;
+    padding:10px
+}
