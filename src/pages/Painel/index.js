@@ -5,18 +5,19 @@ import './styles.css'
 export default function Painel(){
     return(
         <div className="painel-container">
+            <h1 className="tittle">eBank</h1>
             <div className="top">
                 <section className="pass-container">
                     <h3>SENHA PREFERENCIAL:</h3>
-                    <h1>CXP-001</h1>
+                    <h1 className="pass">CXP-001</h1>
                 </section>
                 <section className="guiche-container">
                     <h3>GUICHÊ:</h3>
-                    <h1>001</h1>
+                    <h1 className="guiche">001</h1>
                 </section>
             </div>
             <div className="bottom">
-                <section className="bottom-container">
+                <section className="history-container">
                     <h2>HISTÓRICO</h2>
                     <section className="subtitle">
                         <h3>SENHA</h3>
@@ -52,13 +53,14 @@ export default function Painel(){
                             </li>
                         </ul>
                     </section>
-
-                    <section className="menu">
-                        <h2>Solicite sua senha!</h2>
-                        <button>Preferencial</button>
-                        <button>Normal</button>
-                    </section>
                 </section>
+                <section className="menu">
+                        <h2>Solicite sua senha!</h2>
+                        <section className="buttons">
+                            <button className="preferencial-button">Preferencial</button>
+                            <button className="normal-button">Normal</button>
+                        </section>
+                    </section>
             </div>
             
         </div>
