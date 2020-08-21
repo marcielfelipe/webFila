@@ -1,11 +1,16 @@
 .painel-container{
     margin-top: 5vh;
 }
+
 .tittle{
-    margin-bottom: 5vh;
-    color:#3B97CC;
-    font-size:60px;
-    margin-left: 43.5%;
+    display:flex;
+    justify-content:space-around
+}
+.tittle h1{
+    margin-left: -215px
+}
+.tittle svg{
+    cursor:pointer
 }
 .top{
     color: #fff;

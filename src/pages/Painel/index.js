@@ -1,11 +1,20 @@
 import React from 'react';
-import '../../global.css';
+import {Link} from 'react-router-dom';
+import {FiSettings} from 'react-icons/fi';
+
 import './styles.css'
 
 export default function Painel(){
     return(
         <div className="painel-container">
-            <h1 className="tittle">eBank</h1>
+            <section className="tittle">
+                <h1>eBank</h1>
+                <Link to="/admin">
+                    <FiSettings size={30} color="#0076BF"/>
+                </Link>
+                
+            </section>
+            
             <div className="top">
                 <section className="pass-container">
                     <h3>SENHA PREFERENCIAL:</h3>
@@ -55,12 +64,12 @@ export default function Painel(){
                     </section>
                 </section>
                 <section className="menu">
-                        <h2>Solicite sua senha!</h2>
-                        <section className="buttons">
-                            <button className="preferencial-button">Preferencial</button>
-                            <button className="normal-button">Normal</button>
-                        </section>
+                    <h2>Solicite sua senha!</h2>
+                    <section className="buttons">
+                        <button className="preferencial-button">Preferencial</button>
+                        <button className="normal-button">Normal</button>
                     </section>
+                </section>
             </div>
             
         </div>

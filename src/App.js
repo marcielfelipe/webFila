@@ -1,10 +1,11 @@
 import React from 'react';
-import Painel from './pages/Painel';
+import Routes from './routes';
 
+import './global.css';
 
 function App() {
   return (
-    <Painel/>
+    <Routes/>
   );
 }
 
