@@ -42,46 +42,29 @@ export default function Painel(){
                     <h3>SUA SENHA É {pass}:</h3>
                     <h1 className="pass">{newPass}</h1>
                 </section>
-                <section className="guiche-container">
-                    <h3>GUICHÊ:</h3>
-                    <h1 className="guiche">001</h1>
-                </section>
             </div>
             <div className="bottom">
                 <section className="history-container">
-                    <h2>HISTÓRICO</h2>
+                    <h2>SENHAS</h2>
                     <section className="subtitle">
-                        <h3>SENHA</h3>
-                        <h3>GUICHÊ</h3>
+                        <h3>PREFERENCIAL</h3>
+                        <h3>NORMAL</h3>
                     </section>
                     <section className="lists">
                         <ul className="pass-list">
-                            <li>
-                                CXP-000
-                            </li>
-                            <li>
-                                CXP-000
-                            </li>
-                            <li>
-                                CXP-000
-                            </li>
-                            <li>
-                                CXP-000
-                            </li>
+                            {
+                                preferential.map(pref=>(
+                                    <li>{pref}</li>
+                                ))
+                            }
                         </ul>
                         <ul className="guiche-list">
-                            <li>
-                                000
-                            </li>
-                            <li>
-                                000
-                            </li>
-                            <li>
-                                000
-                            </li>
-                            <li>
-                                000
-                            </li>
+                            {
+                                normal.map(norm=>(
+                                    <li>{norm}</li>
+                                ))
+
+                            }
                         </ul>
                     </section>
                 </section>

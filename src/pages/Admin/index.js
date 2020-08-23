@@ -12,7 +12,7 @@ toast.configure()
 export default function Admin(){
 
     const notify = () => {
-        toast('Sem pessoas na fila!',{position: toast.POSITION.TOP_LEFT})
+        toast('Sem pessoas na fila!',{position: toast.POSITION.TOP_CENTER})
     }
 
     const {normal,preferential} = useContext(PasswordContext);
