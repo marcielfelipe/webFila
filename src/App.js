@@ -1,11 +1,15 @@
 import React from 'react';
 import Routes from './routes';
 
+import {PasswordProvider} from './context/PasswordContext'
+
 import './global.css';
 
 function App() {
   return (
-    <Routes/>
+    <PasswordProvider>
+      <Routes/>
+    </PasswordProvider>
   );
 }
 

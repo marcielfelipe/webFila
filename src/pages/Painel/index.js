@@ -1,10 +1,33 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
+import React,{useState,useContext} from 'react';
+import {Link,useHistory} from 'react-router-dom';
 import {FiSettings} from 'react-icons/fi';
+import PasswordContext from '../../context/PasswordContext';
 
-import './styles.css'
+import './styles.css';
 
 export default function Painel(){
+    const {normal,preferential} = useContext(PasswordContext);
+    const [pass,setPass] = useState('')
+    const [newPass,setNewPass] = useState('')
+    
+
+    function handlePassNormal(){
+        setPass('NORMAL')
+        setNewPass(('CXN-'+(normal.length+1)))
+        normal.unshift(newPass)
+        console.log(normal)
+    }  
+
+    function handlePassPreferential(){
+        setPass('PREFERENCIAL')      
+        setNewPass(('CXP-'+(preferential.length+1)))
+
+        preferential.unshift(newPass)
+        console.log(preferential)
+    } 
+
+
+    
     return(
         <div className="painel-container">
             <section className="tittle">
@@ -17,8 +40,8 @@ export default function Painel(){
             
             <div className="top">
                 <section className="pass-container">
-                    <h3>SENHA PREFERENCIAL:</h3>
-                    <h1 className="pass">CXP-001</h1>
+                    <h3>SUA SENHA É {pass}:</h3>
+                    <h1 className="pass">{newPass}</h1>
                 </section>
                 <section className="guiche-container">
                     <h3>GUICHÊ:</h3>
@@ -66,13 +89,14 @@ export default function Painel(){
                 <section className="menu">
                     <h2>Solicite sua senha!</h2>
                     <section className="buttons">
-                        <button className="preferencial-button">Preferencial</button>
-                        <button className="normal-button">Normal</button>
+                        <button className="preferencial-button" onClick={handlePassPreferential}>Preferencial</button>
+                        <button className="normal-button" onClick={handlePassNormal}>Normal</button>
                     </section>
                 </section>
             </div>
             
         </div>
+
     
 
     );

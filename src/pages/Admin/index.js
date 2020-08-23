@@ -1,9 +1,29 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
+import React,{useState,useContext} from 'react';
+import {Link,useHistory} from 'react-router-dom';
 import {FiArrowLeft} from 'react-icons/fi';
 import './styles.css'
+import PasswordContext from '../../context/PasswordContext';
+
 
 export default function Admin(){
+    const {normal,preferential} = useContext(PasswordContext);
+    const [pass,setPass] = useState('')
+
+    function handleCall(){
+        if(preferential.length===0){
+            setPass('NORMAL')
+            normal.shift()
+            console.log(normal.length)
+        }else{
+            setPass('PREFERENCIAL')
+            
+            console.log(preferential[0])
+            preferential.shift()
+            console.log(preferential[0])
+        }
+        
+    }
+
     return(
         <div className="painel-container">
             <section className="tittle">
@@ -14,8 +34,8 @@ export default function Admin(){
             </section>
             <div className="top">
                 <section className="pass-container">
-                    <h3>SENHA ATUAL:</h3>
-                    <h1 className="pass">CXP-001</h1>
+                    <h3>SENHA AATUAL ->{pass}:</h3>
+                    <h1 className="pass">{}</h1>
                 </section>
                 <section className="guiche-container">
                     <h3>GUICHÊ:</h3>
@@ -45,7 +65,7 @@ export default function Admin(){
                 <section className="chamar">
                         <h2>PRÓXIMO DA FILA!</h2>
                         
-                        <button>Chamar</button>
+                        <button onClick={handleCall}>Chamar</button>
                         
                     </section>
             </div>
