@@ -13,16 +13,15 @@ export default function Painel(){
 
     function handlePassNormal(){
         setPass('NORMAL')
-        setNewPass(('CXN-'+(normal.length+1)))
-        normal.unshift(newPass)
+        normal.push('CXN-'+(normal.length+1))
+        setNewPass(normal[(normal.length-1)])
         console.log(normal)
     }  
 
     function handlePassPreferential(){
         setPass('PREFERENCIAL')      
-        setNewPass(('CXP-'+(preferential.length+1)))
-
-        preferential.unshift(newPass)
+        preferential.push('CXP-'+(preferential.length+1))
+        setNewPass(preferential[(preferential.length-1)])
         console.log(preferential)
     } 
 
